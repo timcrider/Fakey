@@ -29,7 +29,7 @@ class BaseTest extends PHPUnit_Framework_TestCase {
     }
 
     /**
-    * @expectedException Zend_Exception
+    * @expectedException Exception
     */
     public function testMethodDoesNotExist() {
         $base = new Base;

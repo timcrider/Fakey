@@ -26,7 +26,7 @@ class Base extends stdClass {
     */
     public function __call($key, $params) {
         if (!isset($this->{$key}) || !is_callable(array($this, $key))) {
-            throw new Zend_Exception("Call to undefined method ".get_class()."::{$key}");
+            throw new Exception("Call to undefined method ".get_class()."::{$key}");
         }
 
         $method = $this->{$key};
