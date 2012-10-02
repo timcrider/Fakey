@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpunit backupGlobals="false"
+                 backupStaticAttributes="false"
+                 bootstrap="./tests/config.php"
+                 convertErrorsToExceptions="true"
+                 convertNoticesToExceptions="true"
+                 convertWarningsToExceptions="true"
+                 processIsolation="false"
+                 stopOnFailure="false"
+                 syntaxCheck="true"
+                 strict="true"
+                 colors="false">
+        <testsuites>
+                <testsuite name="ADG Courseware Admin Test Suite">
+                        <directory suffix="Test.php">./tests</directory>
+                </testsuite>
+        </testsuites>
+                <logging>
+                        <log type="coverage-html" target="build/coverage" title="Name of Project"
+                                charset="UTF-8" yui="true" highlight="true"
+                                lowUpperBound="35" highLowerBound="70"/>
+                        <log type="coverage-clover" target="build/logs/clover.xml"/>
+                        <log type="junit" target="build/logs/junit.xml" logIncompleteSkipped="false"/>
+                </logging>
+        <filter>
+                <blacklist>
+                        <file>./tests/config.php</file>
+                        <file>*Interface.php</file>
+                        <directory>./tests</directory>
+                </blacklist>
+                <whitelist addUncoveredFilesFromWhitelist="true">
+                        <directory>./src/</directory>
+                </whitelist>
+        </filter>
+</phpunit>
+
